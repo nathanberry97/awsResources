@@ -69,3 +69,7 @@ while getopts ":h?r?c?s?" opt; do
       argument_needed;;
   esac
 done
+
+aws ec2 describe-instances \
+  --region eu-west-2 \
+  --instance-ids ${INSTANCE_ID}

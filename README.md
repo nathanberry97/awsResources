@@ -1,8 +1,12 @@
 # AWS resources
 
-This repo is intend to store resources I use within my AWS account
+This repo is intend to store AWS resources I use within my personal account and
+don't belong to anyone repo.
 
 ## mfa
+
+This folder containers the mfa script I use for my CLI user this is to ensure
+that you need to use mfa before using any CLI commands.
 
 | content        | overview                                           |
 |----------------|----------------------------------------------------|

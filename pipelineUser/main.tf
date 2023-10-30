@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket = "s3-backend-nathan"
+    key    = "pipeline/user/terraform.tfstate"
+    region = "eu-west-2"
+  }
+}
+
 locals {
   user    = var.USER_NAME
   account = var.ACCOUNT_ID

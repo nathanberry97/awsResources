@@ -1,22 +1,12 @@
-terraform {
-  backend "s3" {
-    bucket = "s3-backend-nathan"
-    key    = "pipeline/user/terraform.tfstate"
-    region = "eu-west-2"
-  }
-}
-
 locals {
   user    = var.USER_NAME
   account = var.ACCOUNT_ID
 }
 
-# Create cdk pipeline user
 resource "aws_iam_user" "cdk_pipeline" {
-  name = "${local.user}"
+  name = local.user
 }
 
-# Create iam user policy to assume cdk roles
 resource "aws_iam_user_policy" "assume_role" {
   name   = "cdkPipelineUser"
   user   = aws_iam_user.cdk_pipeline.name
@@ -32,12 +22,10 @@ resource "aws_iam_user_policy" "assume_role" {
   })
 }
 
-# Create access key for user
 resource "aws_iam_access_key" "pipeline_creds" {
   user = aws_iam_user.cdk_pipeline.name
 }
 
-# Store access key in SSM parameter secret string
 resource "aws_ssm_parameter" "pipeline_secret" {
   name = "pipelineSecretKey"
   type = "SecureString"

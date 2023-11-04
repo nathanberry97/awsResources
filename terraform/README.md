@@ -1,7 +1,9 @@
 # Pipeline user for CDK bootstrap
 
-This IaC written in terraform is to create a user to be used with a pipeline and
-allow this user to assume into roles created by `aws cdk` bootstrap process.
+> This IaC written in terraform is to create a user to be used with a pipeline and
+> allow this user to assume into roles created by `aws cdk` bootstrap process.
+> Also creates ECR repos and Admin access to imported users and enforces MFA
+> through the Command line
 
 ## Prerequisite
 

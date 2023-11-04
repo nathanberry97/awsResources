@@ -5,9 +5,14 @@ terraform {
       version = "~> 4.0"
     }
   }
+
+  backend "s3" {
+    bucket = "s3-backend-nathan"
+    key    = "baseline/terraform.tfstate"
+    region = "eu-west-2"
+  }
 }
 
-# Configure the AWS Provider
 provider "aws" {
   region = "eu-west-2"
 }

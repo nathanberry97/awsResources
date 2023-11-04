@@ -5,6 +5,6 @@ variable "REPO_NAME" {
 }
 
 variable "ACCOUNT_ID" {
-  description = "The name of the pipeline user"
+  description = "AWS account id"
   type = string
 }

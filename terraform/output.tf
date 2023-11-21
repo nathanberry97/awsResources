@@ -7,5 +7,9 @@ output "admin_access_key" {
 }
 
 output "ecr_apod_repo_url" {
-  value = module.ecr_repos.url
+  value = module.ecr_repos.sms_url
+}
+
+output "ecr_apod_html_repo_url" {
+  value = module.ecr_repos.html_url
 }

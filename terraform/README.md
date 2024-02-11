@@ -9,17 +9,17 @@
 
 You need to ensure you have the following environment variable:
 
-- `export TF_VAR_ACCOUNT_ID=ACCOUNT_NUMBER`
+-   `export TF_VAR_ACCOUNT_ID=ACCOUNT_NUMBER`
 
 ## Steps to build and deploy the IaC
 
 Once you have cloned the repo you first need to run the following command:
 
-- `terraform init`
+-   `terraform init`
 
 After the command has been ran you can run the nest command to deploy the code:
 
-- `terraform apply`
+-   `terraform apply`
 
 Once the deployment has completed this would have created a new user called
 `cdkPipelineUser`, to confirm this you can run the following command:
@@ -44,6 +44,6 @@ aws ssm get-parameter \
 
 # Other useful commands
 
-- `terraform validate`
-- `terraform plan`
-- `terraform destroy`
+-   `terraform validate`
+-   `terraform plan`
+-   `terraform destroy`

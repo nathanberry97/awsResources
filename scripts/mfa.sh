@@ -15,7 +15,7 @@ ACCESS_KEY=$(echo $CRED | awk '{print $2}')
 SECRET_ACCESS_KEY=$(echo $CRED | awk '{print $4}')
 SESSION_TOKEN=$(echo $CRED | awk '{print $5}')
 
-cp ~/.aws/credentials.swp ~/.aws/credentials 
+cp ~/.aws/credentials.swp ~/.aws/credentials
 
 echo "[mfa]" >> ~/.aws/credentials
 echo "aws_access_key_id = ${ACCESS_KEY}" >> ~/.aws/credentials

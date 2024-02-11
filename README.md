@@ -9,18 +9,18 @@ This folder containers the mfa script I use for my CLI user this is to ensure
 that you need to use mfa before using any CLI commands.
 
 | content         | overview                                           |
-|-----------------|----------------------------------------------------|
+| --------------- | -------------------------------------------------- |
 | mfa.sh          | shell script to automate enabling mfa within shell |
 | credentials.swp | swap file which is used as reference in mfa.sh     |
 
 To use this script it is recommended to store the mfa.sh in the following
 directory:
 
-- `~/.local/bin/`
+-   `~/.local/bin/`
 
 And store credentials.swp in the following directory:
 
-- `~/.aws/credentials.swp`
+-   `~/.aws/credentials.swp`
 
 ## Terraform
 

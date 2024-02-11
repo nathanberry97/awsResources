@@ -6,10 +6,6 @@ output "admin_access_key" {
   value = module.pipeline_user.access_key
 }
 
-output "ecr_apod_repo_url" {
-  value = module.ecr_repos.sms_url
-}
-
-output "ecr_apod_html_repo_url" {
-  value = module.ecr_repos.html_url
+output "ecr_repo_url" {
+  value = module.ecr_repos.ecr_repo_urls
 }

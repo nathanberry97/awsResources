@@ -3,7 +3,6 @@
 ![linting](https://github.com/nathanberry97/awsResources/actions/workflows/lintingPipeline.yaml/badge.svg)
 
 > This repo is intend to store AWS resources I use within my personal AWS
-> account all written in IaC
 
 ## CloudFormation
 

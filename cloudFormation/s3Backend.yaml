@@ -3,23 +3,26 @@ AWSTemplateFormatVersion: 2010-09-09
 Description: template to create S3 backend for terraform
 
 Parameters:
-
-  s3BucketName:
-    Type: String
-    Description: name of the s3 bucket
-    Default: s3-backend-nathan
+    s3BucketName:
+        Type: String
+        Description: name of the s3 bucket
+        Default: s3-backend-nathan
 
 Resources:
-
-  s3Backend:
-    Type: AWS::S3::Bucket
-    DeletionPolicy: Retain
-    Properties:
-      BucketName: !Ref s3BucketName
-      BucketEncryption: 
-        ServerSideEncryptionConfiguration: 
-          - ServerSideEncryptionByDefault:
-              SSEAlgorithm: AES256
-      VersioningConfiguration:
-        Status: Enabled
-...
+    s3Backend:
+        Type: AWS::S3::Bucket
+        DeletionPolicy: Retain
+        UpdateReplacePolicy: Retain
+        Properties:
+            PublicAccessBlockConfiguration:
+                BlockPublicAcls: TRUE
+                BlockPublicPolicy: TRUE
+                IgnorePublicAcls: TRUE
+                RestrictPublicBuckets: TRUE
+            BucketName: !Ref s3BucketName
+            BucketEncryption:
+                ServerSideEncryptionConfiguration:
+                    - ServerSideEncryptionByDefault:
+                          SSEAlgorithm: AES256
+            VersioningConfiguration:
+                Status: Enabled

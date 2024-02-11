@@ -1,0 +1,26 @@
+name: Lint aws resources
+
+on:
+    pull_request:
+        branches: [main]
+
+jobs:
+    Deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Install pre-commit Dependencies
+              run: |
+                  pip install pre-commit checkov
+                  make setup
+
+            - name: Validate pre-commit
+              run: |
+                  pre-commit run --all
+
+            - name: Run checkov scan
+              run: |
+                  make checkov

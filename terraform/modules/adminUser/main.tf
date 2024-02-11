@@ -9,7 +9,7 @@ resource "aws_iam_group" "admin" {
 
 resource "aws_iam_user_group_membership" "attach_group_to_user" {
   user   = local.user_name
-  groups = [ aws_iam_group.admin.name ]
+  groups = [aws_iam_group.admin.name]
 }
 
 resource "aws_iam_group_policy_attachment" "attach_admin_access" {
@@ -18,15 +18,15 @@ resource "aws_iam_group_policy_attachment" "attach_admin_access" {
 }
 
 resource "aws_iam_group_policy" "mfa_cli_enable" {
-  name    = "mfaCliEnable"
-  group   = aws_iam_group.admin.name
-  policy  = jsonencode({
-    Version   = "2012-10-17"
+  name  = "mfaCliEnable"
+  group = aws_iam_group.admin.name
+  policy = jsonencode({
+    Version = "2012-10-17"
     Statement = [{
       Sid       = "BlockMostAccessUnlessSignedInWithMFA",
       Effect    = "Deny",
       Resource  = "*",
-      Condition = { BoolIfExists = { "aws:MultiFactorAuthPresent": "false" } },
+      Condition = { BoolIfExists = { "aws:MultiFactorAuthPresent" : "false" } },
       NotAction = [
         "iam:CreateVirtualMFADevice",
         "iam:DeleteVirtualMFADevice",

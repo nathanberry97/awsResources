@@ -3,7 +3,7 @@ locals {
 }
 
 module "admin_user" {
-  source     = "./modules/adminUser"
+  source = "./modules/adminUser"
 }
 
 module "pipeline_user" {
@@ -12,5 +12,5 @@ module "pipeline_user" {
 }
 
 module "ecr_repos" {
-  source     = "./modules/ecr"
+  source = "./modules/ecr"
 }

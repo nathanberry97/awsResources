@@ -31,3 +31,8 @@ plan: ## Plan terraform
 .PHONY: apply
 apply: ## Apply terraform
 	@terraform -chdir=terraform apply
+
+.PHONY: checkov
+checkov: ## Run checkov
+	@checkov --directory=cloudFormation
+	@checkov --directory=terraform

@@ -14,6 +14,11 @@ Resources:
         DeletionPolicy: Retain
         UpdateReplacePolicy: Retain
         Properties:
+            PublicAccessBlockConfiguration:
+                BlockPublicAcls: TRUE
+                BlockPublicPolicy: TRUE
+                IgnorePublicAcls: TRUE
+                RestrictPublicBuckets: TRUE
             BucketName: !Ref s3BucketName
             BucketEncryption:
                 ServerSideEncryptionConfiguration:

@@ -10,7 +10,3 @@ module "pipeline_user" {
   source     = "./modules/pipelineUser"
   ACCOUNT_ID = local.accountId
 }
-
-module "ecr_repos" {
-  source = "./modules/ecr"
-}

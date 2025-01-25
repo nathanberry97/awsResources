@@ -20,7 +20,6 @@ make deploy
 > This IaC written in terraform is to create the following:
 >
 > -   user to be used for pipeline deployments
-> -   creates ECR repos
 > -   Admin access to imported users and enforces MFA
 
 ### Prerequisite
@@ -54,8 +53,7 @@ by running the following command:
 ```shell
 aws ssm get-parameter \
   --name pipelineSecretKey --region eu-west-2 \
-  --with-decryption --query Parameter.Value \
-  | awk -F {print $2}
+  --with-decryption --query Parameter.Value
 ```
 
 > **Note** ensure you keep this value a secret as it is the equivalent of a password
